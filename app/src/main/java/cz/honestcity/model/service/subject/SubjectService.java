@@ -12,11 +12,9 @@ import cz.honestcity.model.service.subject.api.GetSubjectsRequest;
 import cz.honestcity.model.service.subject.api.SubjectRestApi;
 import cz.honestcity.model.service.subject.database.SubjectDatabaseGateway;
 import io.reactivex.Observable;
-import io.reactivex.Observer;
 
 public class SubjectService extends AbstractService {
 
-    @Inject
     private SubjectRestApi restApi;
 
     @Inject
@@ -29,8 +27,8 @@ public class SubjectService extends AbstractService {
     }
 
     private Observable<Map<Class<? extends WatchedSubject>, List<? extends WatchedSubject>>> performCall(Position userPosition) {
-        SubjectRestApi subjectRestApi = getBaseUrl().create(SubjectRestApi.class);
-        return subjectRestApi.getSubjects(new GetSubjectsRequest().setUserPosition(userPosition))
+        restApi = getBaseUrl().create(SubjectRestApi.class);
+        return restApi.getSubjects(new GetSubjectsRequest().setUserPosition(userPosition))
                 .flatMap(mapper -> Observable.fromArray(mapper.getSubjects()));
     }
 

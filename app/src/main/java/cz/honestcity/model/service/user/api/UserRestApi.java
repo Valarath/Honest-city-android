@@ -1,9 +1,10 @@
 package cz.honestcity.model.service.user.api;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 public interface UserRestApi {
 
     @GET("/user-suggestions")
-    GetUserSuggestionsResponse getUserSuggestions(GetUserSuggestionsRequest request);
+    Observable<GetUserSuggestionsResponse> getUserSuggestions(GetUserSuggestionsRequest request);
 }
