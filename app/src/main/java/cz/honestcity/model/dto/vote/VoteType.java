@@ -1,4 +1,4 @@
-package cz.honestcity.model.vote;
+package cz.honestcity.model.dto.vote;
 
 public enum VoteType {
     NEW_EXCHANGE_POINT(VoteConstants.NEW_EXCHANGE_POINT),

@@ -1,10 +1,8 @@
-package cz.honestcity.model.suggestion;
+package cz.honestcity.model.dto.suggestion;
 
-import cz.honestcity.model.user.User;
+import cz.honestcity.model.dto.user.User;
 import lombok.Data;
 import lombok.experimental.Accessors;
-
-import java.awt.*;
 
 @Data
 @Accessors(chain = true)

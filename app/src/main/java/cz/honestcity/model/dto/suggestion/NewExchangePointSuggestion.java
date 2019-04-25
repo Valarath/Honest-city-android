@@ -1,7 +1,7 @@
-package cz.honestcity.model.suggestion;
+package cz.honestcity.model.dto.suggestion;
 
 
-import cz.honestcity.model.subject.Position;
+import cz.honestcity.model.dto.subject.Position;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

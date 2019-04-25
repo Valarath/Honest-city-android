@@ -1,4 +1,4 @@
-package cz.honestcity.model.suggestion;
+package cz.honestcity.model.dto.suggestion;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

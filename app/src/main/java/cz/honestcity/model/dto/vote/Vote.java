@@ -1,4 +1,4 @@
-package cz.honestcity.model.vote;
+package cz.honestcity.model.dto.vote;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

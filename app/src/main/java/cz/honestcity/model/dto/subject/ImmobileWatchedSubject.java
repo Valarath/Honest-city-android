@@ -1,4 +1,4 @@
-package cz.honestcity.model.subject;
+package cz.honestcity.model.dto.subject;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

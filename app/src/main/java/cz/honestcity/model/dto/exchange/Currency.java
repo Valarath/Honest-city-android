@@ -1,4 +1,4 @@
-package cz.honestcity.model.exchange;
+package cz.honestcity.model.dto.exchange;
 
 public enum Currency {
     EU,USD;

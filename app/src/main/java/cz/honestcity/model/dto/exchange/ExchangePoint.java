@@ -1,8 +1,7 @@
-package cz.honestcity.model.exchange;
+package cz.honestcity.model.dto.exchange;
 
-import cz.honestcity.model.subject.ImmobileWatchedSubject;
-import cz.honestcity.model.suggestion.ExchangeRateSuggestion;
-import cz.honestcity.model.suggestion.Suggestion;
+import cz.honestcity.model.dto.subject.ImmobileWatchedSubject;
+import cz.honestcity.model.dto.suggestion.ExchangeRateSuggestion;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
