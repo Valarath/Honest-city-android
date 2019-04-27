@@ -6,7 +6,7 @@ import cz.honestcity.model.service.AbstractService;
 import cz.honestcity.model.service.authority.api.AuthorityRestApi;
 import io.reactivex.Observable;
 
-public class AuthorityService extends AbstractService {
+public class AuthorityDataManager extends AbstractService {
 
     private AuthorityRestApi restApi;
 
