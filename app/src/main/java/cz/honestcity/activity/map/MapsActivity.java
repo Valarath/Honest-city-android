@@ -3,22 +3,32 @@ package cz.honestcity.activity.map;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.honestcityandroid.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.ui.IconGenerator;
+
+import cz.honestcity.model.dto.subject.HonestyStatus;
 
 //import android.provider.SyncStateContract;
 
@@ -64,13 +74,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Location location = locationManager.getLastKnownLocation(locationManager
                 .getBestProvider(criteria, false));
 
-
-        mMap.addCircle(new CircleOptions().center(sydney).clickable(true).radius(5).fillColor(Color.RED).strokeColor(Color.GRAY));
-
+        mMap.addMarker(new MarkerOptions().position(sydney).icon(BitmapDescriptorFactory.fromBitmap(getExchangePoint())));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(),location.getLongitude())));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,
                 16));
+    }
+
+    private Bitmap getExchangePoint() {
+
+        int px = getResources().getDimensionPixelSize(R.dimen.map_dot_marker_size);
+        Bitmap exchange_point = Bitmap.createBitmap(px, px, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(exchange_point);
+        Drawable shape = ContextCompat.getDrawable(this,R.drawable.point_subject);
+        shape.setBounds(0, 0, exchange_point.getWidth(), exchange_point.getHeight());
+        shape.draw(canvas);
+        return exchange_point;
     }
 
     private void obtainPermissions() {
