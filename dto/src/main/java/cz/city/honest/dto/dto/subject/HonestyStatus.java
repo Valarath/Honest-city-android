@@ -1,0 +1,20 @@
+package cz.city.honest.dto.dto.subject;
+
+import lombok.Getter;
+
+@Getter
+public enum HonestyStatus {
+    HONEST(null),
+    HONEST_WITH_RESERVE(HONEST),
+    BE_CAUTION(HONEST_WITH_RESERVE),
+    DISHONEST(BE_CAUTION),
+    UNKNOWN(null);
+
+    HonestyStatus(HonestyStatus nextLevelOfHonesty) {
+        this.nextLevelOfHonesty = nextLevelOfHonesty;
+    }
+
+    private HonestyStatus nextLevelOfHonesty;
+
+
+}

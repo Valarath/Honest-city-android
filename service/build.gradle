@@ -1,0 +1,13 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation group: 'com.google.dagger', name: 'dagger', version: '2.22.1'
+    implementation project(path: ':dto')
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
